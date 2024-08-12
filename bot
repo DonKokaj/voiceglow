@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the Test Page</h1>
+    <p>This is a simple test page created using HTML.</p>
+    <button onclick="alert('Button clicked!')">Click Me</button>
+
+    <div style="width: 500px; height: 500px;" id="VG_OVERLAY_CONTAINER">
+<!-- Here is where Voiceglow renders the widget. -->
+<!-- Set width, height for 500px as an example after changing render to 'full-width' -->
+</div>
+
+<!-- Remove 'defer' if you want widget to load faster (Will affect website loading) -->
+<script defer>
+    (function() {
+        window.VG_CONFIG = {
+            ID: "n3gp64jqfjfxke1v",
+            region: 'eu', // 'eu' or 'na'corresponding to Europe and North America
+            render: 'full-width', // popup or full-width
+            stylesheets: [
+                // Base Voiceglow CSS
+                "https://storage.googleapis.com/voiceglow-cdn/vg_live_build/styles.css",
+                // Add your custom css stylesheets, Can also add relative URL ('/public/your-file.css)
+            ],
+            // userID: 'USER_ID', // If you want to use your own user_id
+            // autostart: true, // Whether to autostart the chatbot with the proactive message
+        }
+        var VG_SCRIPT = document.createElement("script");
+        VG_SCRIPT.src = "https://storage.googleapis.com/voiceglow-cdn/vg_live_build/vg_bundle.js";
+        document.body.appendChild(VG_SCRIPT);
+    })()
+</script>
+
+</body>
+</html>
